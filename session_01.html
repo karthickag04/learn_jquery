@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Examples</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  /* CSS styles can be added here */
+</style>
+</head>
+<body>
+
+
+
+
+  
+<script>
+  // jQuery Syntax
+  $(document).ready(function() {
+    // Code here executes when the document is ready
+    console.log("Document is ready!");
+
+    // jQuery Selectors
+    // Select all paragraphs and change their text color
+    $("p").css("color", "blue");
+
+    // jQuery Events
+    // Alert when button is clicked
+    $("#btn-click").click(function() {
+      alert("Button clicked!");
+    });
+
+    // jQuery Effects
+    // Toggle fading effect on a box
+    $("#btn-fade").click(function() {
+      $("#fade-box").fadeToggle();
+    });
+
+    // jQuery HTML
+    // Change HTML content of a div
+    $("#btn-html").click(function() {
+      $("#html-container").html("<b>Updated HTML</b>");
+    });
+
+    // jQuery Traversing
+    // Iterate over list items and log their text
+    $("ul li").each(function(index) {
+      console.log(index + ": " + $(this).text());
+    });
+
+    // jQuery AJAX & Misc
+    // Load external content using AJAX
+    $("#btn-ajax").click(function() {
+      $.get("example.txt", function(data) {
+        $("#ajax-container").text(data);
+      });
+    });
+
+    // jQuery Mobile
+    // For mobile-specific features, refer to jQuery Mobile documentation
+    // Below are just placeholders for mobile-related topics
+
+    // jQuery Mobile Pages
+    // Example: Create a new page dynamically
+    var newPage = $("<div data-role='page' id='new-page'><div data-role='header'><h1>New Page</h1></div><div data-role='content'><p>This is a new page!</p></div></div>");
+    $("body").append(newPage);
+
+    // jQuery Mobile Transitions
+    // Example: Change page transition
+    $.mobile.defaultPageTransition = 'slide';
+
+    // jQuery Mobile Buttons
+    // Example: Style a button with jQuery Mobile
+    $("#btn-mobile").button();
+
+    // jQuery Mobile Icons
+    // Example: Add an icon to a button
+    $("#btn-mobile").button({ icon: "star" });
+
+    // jQuery Mobile Popups
+    // Example: Show a popup on button click
+    $("#btn-popup").click(function() {
+      $("#popup-basic").popup("open");
+    });
+
+    // jQuery Mobile Toolbars
+    // Example: Create a fixed header
+    $("[data-role='header']").toolbar({ theme: "b" });
+
+    // jQuery Mobile Navbars
+    // Example: Create a navigation bar
+    $("[data-role='navbar']").navbar();
+
+    // jQuery Mobile Panels
+    // Example: Create a panel
+    $("#mypanel").panel();
+
+    // jQuery Mobile Collapsibles
+    // Example: Create a collapsible content
+    $("#collapsible-content").collapsible();
+
+    // jQuery Mobile Tables
+    // Example: Create a table with jQuery Mobile styles
+    $("#my-table").table();
+
+    // jQuery Mobile Grids
+    // Example: Create a grid layout
+    $("#my-grid").grid();
+
+    // jQuery Mobile Lists
+    // Example: Create a listview
+    $("#my-list").listview();
+
+    // jQuery Mobile Forms
+    // Example: Enhance form elements with jQuery Mobile
+    $("#my-form").trigger("create");
+
+    // jQuery Mobile Themes
+    // Example: Set a theme for the entire page
+    $("[data-role='page']").page({ theme: "a" });
+
+    // jQuery Mobile Events
+    // Example: Handle page events
+    $("#new-page").on("pagecreate", function(event) {
+      console.log("New page created!");
+    });
+
+  });
+
+</script>
+
+<!-- HTML for demonstration -->
+<button id="btn-click">Click Me</button>
+<button id="btn-fade">Toggle Fade</button>
+<button id="btn-html">Change HTML</button>
+<button id="btn-ajax">Load AJAX</button>
+
+<div id="fade-box" style="width: 100px; height: 100px; background-color: red;"></div>
+<div id="html-container">Original HTML</div>
+<div id="ajax-container">AJAX Content</div>
+
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<!-- jQuery Mobile examples -->
+<button id="btn-mobile">jQuery Mobile Button</button>
+<button id="btn-popup">Show Popup</button>
+<div data-role="popup" id="popup-basic">
+  <p>This is a popup!</p>
+</div>
+
+<div data-role="panel" id="mypanel">
+  <h3>Panel Content</h3>
+  <p>This is a panel!</p>
+</div>
+
+<div data-role="collapsible" id="collapsible-content">
+  <h3>Click to collapse</h3>
+  <p>This is collapsible content!</p>
+</div>
+
+<table data-role="table" id="my-table" data-mode="reflow">
+  <thead>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+    </tr>
+  </tbody>
+</table>
+
+<div data-role="grid" id="my-grid">
+  <div class="ui-block-a">Block A</div>
+  <div class="ui-block-b">Block B</div>
+</div>
+
+<ul data-role="listview" id="my-list">
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ul>
+
+<form id="my-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
